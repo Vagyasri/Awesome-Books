@@ -17,7 +17,24 @@ function removeBook(remTitle, collection){
 // RemoveBook('book2 title', listOfBooks);
 // console.log(listOfBooks);
 
-function display(collection){
-     
+function convertCollectionToString(collection){
+    
+    let output = '';
+    return output = collection.map(book => {return `<li>title: ${book.title} || author: ${book.author}</li>`}).join('');
 }
+
+function display(collection){
+    let list = document.createElement('ul');
+    list.className = 'display-books';
+    list.innerHTML = ` 
+           ${convertCollectionToString(collection)} 
+    `;
+    let container = document.getElementById('display-books');
+    container.append(list);
+}
+
+display(listOfBooks);
+
+
+
 
