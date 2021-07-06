@@ -6,18 +6,18 @@ function addBook(title, author) {
     listOfBooks.push({ title: title, author: author });
     localStorage.setItem("books", JSON.stringify(listOfBooks));
 }
-
+// eslint-disable-next-line no-unused-vars
 function removeBook(event) {
   let remTitle = event.target.parentElement.firstElementChild.textContent;
   listOfBooks = JSON.parse(localStorage.getItem("books"));
   listOfBooks = listOfBooks.filter((book) => book.title !== remTitle);
   localStorage.setItem("books", JSON.stringify(listOfBooks));
   location.reload();
-};
+}
 
 function display() {
   listOfBooks = JSON.parse(localStorage.getItem("books")) || [];
-  booksContainer = document.getElementById("display-books");
+  let booksContainer = document.getElementById("display-books");
 
   for (let book of listOfBooks) {
     booksContainer.innerHTML += `
