@@ -1,9 +1,10 @@
+/* eslint-disable strict */
 let listOfBooks = [];
 
 function addBook(title, author) {
-  listOfBooks = JSON.parse(localStorage.getItem("books")) || [];
-  listOfBooks.push({ title: title, author: author });
-  localStorage.setItem("books", JSON.stringify(listOfBooks));
+    listOfBooks = JSON.parse(localStorage.getItem("books")) || [];
+    listOfBooks.push({ title: title, author: author });
+    localStorage.setItem("books", JSON.stringify(listOfBooks));
 }
 
 function removeBook(event) {
@@ -12,7 +13,7 @@ function removeBook(event) {
   listOfBooks = listOfBooks.filter((book) => book.title !== remTitle);
   localStorage.setItem("books", JSON.stringify(listOfBooks));
   location.reload();
-}p
+};
 
 function display() {
   listOfBooks = JSON.parse(localStorage.getItem("books")) || [];
