@@ -1,14 +1,22 @@
 
- let listOfBooks = [];
+  let listOfBooks = [];
 
  function addBook(title, author){
-    listOfBooks = JSON.parse(localStorage.getItem('books'))|| [];
-    listOfBooks.push({title: title, author: author}) 
+     listOfBooks = JSON.parse(localStorage.getItem('books'))|| [];
+     listOfBooks.push({title: title, author: author}) 
+     localStorage.setItem('books', JSON.stringify(listOfBooks));
+    }
+
+function removeBook(event){
+
+    let remTitle = event.target.parentElement.firstElementChild.textContent;
+    listOfBooks = JSON.parse(localStorage.getItem('books'))  
+    listOfBooks = listOfBooks.filter(book => book.title !== remTitle);
     localStorage.setItem('books', JSON.stringify(listOfBooks));
+    location.reload();
 }
-
-
-
+    
+    
 function display(){
     listOfBooks = JSON.parse(localStorage.getItem('books'))|| [];
     booksContainer = document.getElementById('display-books');
@@ -25,42 +33,28 @@ function display(){
     } 
 }
 
-function handleAdd(){
-
-    //console.log(event.target)
-    //event.preventDefault();
+function handleAdd(event){
+    event.preventDefault();
     let titleInput = document.querySelector('input[placeholder="Title"]');
     let authorInput = document.querySelector('input[placeholder="Author"]');
+    //titleInput.addEventListener('focus', ()=>{console.log(titleInput.value)})
+    if ( !((titleInput.value.length < 3) || (authorInput.value.length < 3))){
+        addBook(titleInput.value, authorInput.value, listOfBooks);
+        location.reload();
+    }
+    else{
+        let form = document.querySelector('form')
+       let errorDiv = document.createElement('div')
+       form.prepend(errorDiv);
+       errorDiv.innerHTML = `
+       <p>Check your input *min length 3 chars* </p>
+       `
+    }
 
-    //console.log(titleInput.value, authorInput.value.length)
-
-    addBook(titleInput.value, authorInput.value, listOfBooks);
-     //display(listOfBooks);
 }
-
-display();
 
 let form =  document.querySelector('form');  
 form.addEventListener('submit', handleAdd)
 
 
-
-function removeBook(event){
-
-     let remTitle = event.target.parentElement.firstElementChild.textContent;
-     listOfBooks = JSON.parse(localStorage.getItem('books'))  
-    listOfBooks = listOfBooks.filter(book => book.title !== remTitle);
-     localStorage.setItem('books', JSON.stringify(listOfBooks));
-    location.reload();
-}
-
- //rmvBook =  document.querySelector('.removebtn');
-//rmvBook.addEventListener('click', removeBook)
-
-
-
-// 1- select a specific btn that was clicked
-
-
-
-
+display();
