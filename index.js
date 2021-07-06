@@ -11,11 +11,11 @@ function addBook(title, author) {
 function removeBook(event) {
   const remSerial = event.target.parentElement.id;
 
-   listOfBooks = JSON.parse(localStorage.getItem('books'));
-    listOfBooks = listOfBooks.filter((book) => book.serialNumber != remSerial);
-                                         
-  localStorage.setItem('books', JSON.stringify(listOfBooks));    location.reload();
+  listOfBooks = JSON.parse(localStorage.getItem('books'));
+  // eslint-disable-next-line eqeqeq
+  listOfBooks = listOfBooks.filter((book) => book.serialNumber != remSerial);
 
+  localStorage.setItem('books', JSON.stringify(listOfBooks)); location.reload();
 }
 
 function display() {
