@@ -7,11 +7,7 @@
     localStorage.setItem('books', JSON.stringify(listOfBooks));
 }
 
-function removeBook(remTitle){
-     listOfBooks = JSON.parse(localStorage.getItem('books'))  
-     listOfBooks = listOfBooks.filter(book => book.title != remTitle);
-     localStorage.setItem('books', JSON.stringify(listOfBooks));
-}
+
 
 function display(){
     listOfBooks = JSON.parse(localStorage.getItem('books'))|| [];
@@ -20,10 +16,10 @@ function display(){
     for(let book of listOfBooks){
         booksContainer.innerHTML += `
         <div>
-        <p>${book.title}</p>
-        <p>${book.author}</p>
-        <button type="button" class="removebtn"> Remove </button>
-        <hr>
+            <p>${book.title}</p>
+            <p>${book.author}</p>
+            <button type="button" class="removebtn" onclick='removeBook(event)'> Remove </button>
+            <hr>
         </div> 
         `;
     } 
@@ -45,13 +41,25 @@ function handleAdd(){
 display();
 
 let form =  document.querySelector('form');  
-let rmvBook =  document.querySelector('removebtn');
 form.addEventListener('submit', handleAdd)
-rmvBook.addEventListener('click', removeBook)
 
 
 
+function removeBook(event){
 
+     let remTitle = event.target.parentElement.firstElementChild.textContent;
+     listOfBooks = JSON.parse(localStorage.getItem('books'))  
+    listOfBooks = listOfBooks.filter(book => book.title !== remTitle);
+     localStorage.setItem('books', JSON.stringify(listOfBooks));
+    location.reload();
+}
+
+ //rmvBook =  document.querySelector('.removebtn');
+//rmvBook.addEventListener('click', removeBook)
+
+
+
+// 1- select a specific btn that was clicked
 
 
 
