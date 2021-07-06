@@ -1,23 +1,21 @@
-let listOfBooks = [
-     {title: 'book1 title', author:'author 1'},
-     {title: 'book2 title', author:'author 2'}
-];
 
- function addBook(title, author, collection){
-    collection.push({title: title, author: author})
+ let listOfBooks = [];
+
+ function addBook(title, author){
+    listOfBooks = JSON.parse(localStorage.getItem('books'))|| [];
+    listOfBooks.push({title: title, author: author}) 
+    localStorage.setItem('books', JSON.stringify(listOfBooks));
 }
-
-
 
 function removeBook(remTitle, collection){
  listOfBooks = collection.filter(book => book.title != remTitle);
 }
 
-
-
-function display(collection){
+function display(){
+    listOfBooks = JSON.parse(localStorage.getItem('books'))|| [];
     booksContainer = document.getElementById('display-books');
-    for(let book of collection){
+    
+    for(let book of listOfBooks){
         booksContainer.innerHTML += `
         <div>
         <p>${book.title}</p>
@@ -28,35 +26,25 @@ function display(collection){
         `;
     } 
 }
-display(listOfBooks);
 
-// when click ADD ---->
-     //2) update our listOfBooks and call display()
+function handleAdd(event){
 
-function addBtnClick(){
-    let container = document.createElement('div');
-    container.innerHTML = `
-        <p>HARRY POTTER book</p>
-        <p>Testeroo Testyy</p>
-         <button type="button"> Remove </button>
-         <hr>
-    `;
-    let lastBook = document.querySelector('body div:last-of-type');
-    lastBook.after(container);
+    //console.log(event.target)
+    //event.preventDefault();
+    let titleInput = document.querySelector('input[placeholder="Title"]');
+    let authorInput = document.querySelector('input[placeholder="Author"]');
 
+    //console.log(titleInput.value, authorInput.value.length)
+
+    addBook(titleInput.value, authorInput.value, listOfBooks);
+     //display(listOfBooks);
 }
 
+display();
 
-// let titleInput = document.querySelector('input[placeholder="Title"]')
-// titleInput.value = 'vdfvdfdffdffgf';
+let form =  document.querySelector('form');  
+form.addEventListener('submit', handleAdd)
 
-
-
-let addBtn =  document.querySelector('.add-btn');  
-//console.log(addBtn)
-
-
-addBtn.addEventListener('click', ()=>{console.log('clicked!!')})
 
 
 
