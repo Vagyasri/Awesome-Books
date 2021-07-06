@@ -7,8 +7,10 @@
     localStorage.setItem('books', JSON.stringify(listOfBooks));
 }
 
-function removeBook(remTitle, collection){
- listOfBooks = collection.filter(book => book.title != remTitle);
+function removeBook(remTitle){
+     listOfBooks = JSON.parse(localStorage.getItem('books'))  
+     listOfBooks = listOfBooks.filter(book => book.title != remTitle);
+     localStorage.setItem('books', JSON.stringify(listOfBooks));
 }
 
 function display(){
@@ -20,14 +22,14 @@ function display(){
         <div>
         <p>${book.title}</p>
         <p>${book.author}</p>
-        <button type="button"> Remove </button>
+        <button type="button" class="removebtn"> Remove </button>
         <hr>
         </div> 
         `;
     } 
 }
 
-function handleAdd(event){
+function handleAdd(){
 
     //console.log(event.target)
     //event.preventDefault();
@@ -43,7 +45,9 @@ function handleAdd(event){
 display();
 
 let form =  document.querySelector('form');  
+let rmvBook =  document.querySelector('removebtn');
 form.addEventListener('submit', handleAdd)
+rmvBook.addEventListener('click', removeBook)
 
 
 
