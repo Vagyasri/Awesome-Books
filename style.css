@@ -1,0 +1,7 @@
+body div:last-of-type {
+  border: 1px solid blue;
+}
+
+input[placeholder="Title"] {
+  border: 3px solid green;
+}

@@ -10,7 +10,7 @@ In this project, We built a basic website that allows users to add/remove books 
 
 ## Live Demo
 
-[Live Demo Link](https://vagyasri.github.io/Project3-newsweek/)
+[Live View!!](https://vagyasri.github.io/Awesome-Books/)
 
 ## Author 1
 
@@ -36,9 +36,9 @@ In this project, We built a basic website that allows users to add/remove books 
 
 ### Cloning the repo to your local system (If you already have git, installed in your system):
 
-- [Copy this link](https://vagyasri.github.io/Events-Directory/)
+- [Copy this link](https://github.com/Vagyasri/Awesome-Books.git)
 - Open your terminal or command line
-- Run "git clone [Paste this link](https://vagyasri.github.io/Events-Directory/)"
+- Run "git clone [Paste this link](https://github.com/Vagyasri/Awesome-Books.git)"
 - Open the folder with your code editor
 - Now You can edit the code and check the changes in the browser using Live Server
 
@@ -46,7 +46,7 @@ In this project, We built a basic website that allows users to add/remove books 
 
 - Install npm
 - For HTML: Run npx hint .
-- For CSS: Run npx stylelint “**/*.css”
+- For CSS: Run npx stylelint "**/*.{css,scss}"
 
 ## 🤝 Contributing
 
@@ -62,7 +62,7 @@ Start by:
 - Push your branch up to your forked repository
 - Open a Pull Request with a detailed description to the development branch of the original project for a review
 
-Feel free to check the [issues page](https://github.com/Vagyasri/Project3-newsweek/issues), contribute to the Project by creating an issue.
+Feel free to check the [issues page](https://github.com/Vagyasri/Awesome-Books/issues), contribute to the Project by creating an issue.
 
 
 ## Show your support
