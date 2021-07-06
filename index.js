@@ -3,26 +3,28 @@ let listOfBooks = [];
 
 function addBook(title, author) {
   listOfBooks = JSON.parse(localStorage.getItem('books')) || [];
-  listOfBooks.push({ title, author });
+  const serialNumber = listOfBooks.length + 1;
+  listOfBooks.push({ serialNumber, title, author });
   localStorage.setItem('books', JSON.stringify(listOfBooks));
 }
 // eslint-disable-next-line no-unused-vars
 function removeBook(event) {
-  const remTitle = event.target.parentElement.firstElementChild.textContent;
-  listOfBooks = JSON.parse(localStorage.getItem('books'));
-  listOfBooks = listOfBooks.filter((book) => book.title !== remTitle);
-  localStorage.setItem('books', JSON.stringify(listOfBooks));
-  location.reload();
+  const remSerial = event.target.parentElement.id;
+
+   listOfBooks = JSON.parse(localStorage.getItem('books'));
+    listOfBooks = listOfBooks.filter((book) => book.serialNumber != remSerial);
+                                         
+  localStorage.setItem('books', JSON.stringify(listOfBooks));    location.reload();
+
 }
 
 function display() {
   listOfBooks = JSON.parse(localStorage.getItem('books')) || [];
   const booksContainer = document.getElementById('display-books');
-
   // eslint-disable-next-line no-restricted-syntax
   for (const book of listOfBooks) {
     booksContainer.innerHTML += `
-        <div>
+        <div id='${book.serialNumber}'>
             <p>${book.title}</p>
             <p>${book.author}</p>
             <button type="button" class="removebtn" onclick='removeBook(event)'> Remove </button>
