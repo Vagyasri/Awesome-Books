@@ -7,33 +7,59 @@ let listOfBooks = [
     collection.push({title: title, author: author})
 }
 
-// AddBook('book3', 'author-3', listOfBooks);
-// console.log(listOfBooks);
+
 
 function removeBook(remTitle, collection){
  listOfBooks = collection.filter(book => book.title != remTitle);
 }
 
-// RemoveBook('book2 title', listOfBooks);
-// console.log(listOfBooks);
 
-function convertCollectionToString(collection){
-    
-    let output = '';
-    return output = collection.map(book => {return `<li>title: ${book.title} || author: ${book.author}</li>`}).join('');
-}
 
 function display(collection){
-    let list = document.createElement('ul');
-    list.className = 'display-books';
-    list.innerHTML = ` 
-           ${convertCollectionToString(collection)} 
+    booksContainer = document.getElementById('display-books');
+    for(let book of collection){
+        booksContainer.innerHTML += `
+        <div>
+        <p>${book.title}</p>
+        <p>${book.author}</p>
+        <button type="button"> Remove </button>
+        <hr>
+        </div> 
+        `;
+    } 
+}
+display(listOfBooks);
+
+// when click ADD ---->
+     //2) update our listOfBooks and call display()
+
+function addBtnClick(){
+    let container = document.createElement('div');
+    container.innerHTML = `
+        <p>HARRY POTTER book</p>
+        <p>Testeroo Testyy</p>
+         <button type="button"> Remove </button>
+         <hr>
     `;
-    let container = document.getElementById('display-books');
-    container.append(list);
+    let lastBook = document.querySelector('body div:last-of-type');
+    lastBook.after(container);
+
 }
 
-display(listOfBooks);
+
+// let titleInput = document.querySelector('input[placeholder="Title"]')
+// titleInput.value = 'vdfvdfdffdffgf';
+
+
+
+let addBtn =  document.querySelector('.add-btn');  
+//console.log(addBtn)
+
+
+addBtn.addEventListener('click', ()=>{console.log('clicked!!')})
+
+
+
 
 
 
