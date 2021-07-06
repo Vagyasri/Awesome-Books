@@ -1,25 +1,26 @@
-/* eslint-disable strict */
+/* eslint-disable no-restricted-globals */
 let listOfBooks = [];
 
 function addBook(title, author) {
-    listOfBooks = JSON.parse(localStorage.getItem("books")) || [];
-    listOfBooks.push({ title: title, author: author });
-    localStorage.setItem("books", JSON.stringify(listOfBooks));
+  listOfBooks = JSON.parse(localStorage.getItem('books')) || [];
+  listOfBooks.push({ title, author });
+  localStorage.setItem('books', JSON.stringify(listOfBooks));
 }
 // eslint-disable-next-line no-unused-vars
 function removeBook(event) {
-  let remTitle = event.target.parentElement.firstElementChild.textContent;
-  listOfBooks = JSON.parse(localStorage.getItem("books"));
+  const remTitle = event.target.parentElement.firstElementChild.textContent;
+  listOfBooks = JSON.parse(localStorage.getItem('books'));
   listOfBooks = listOfBooks.filter((book) => book.title !== remTitle);
-  localStorage.setItem("books", JSON.stringify(listOfBooks));
+  localStorage.setItem('books', JSON.stringify(listOfBooks));
   location.reload();
 }
 
 function display() {
-  listOfBooks = JSON.parse(localStorage.getItem("books")) || [];
-  let booksContainer = document.getElementById("display-books");
+  listOfBooks = JSON.parse(localStorage.getItem('books')) || [];
+  const booksContainer = document.getElementById('display-books');
 
-  for (let book of listOfBooks) {
+  // eslint-disable-next-line no-restricted-syntax
+  for (const book of listOfBooks) {
     booksContainer.innerHTML += `
         <div>
             <p>${book.title}</p>
@@ -33,15 +34,14 @@ function display() {
 
 function handleAdd(event) {
   event.preventDefault();
-  let titleInput = document.querySelector('input[placeholder="Title"]');
-  let authorInput = document.querySelector('input[placeholder="Author"]');
-  //titleInput.addEventListener('focus', ()=>{console.log(titleInput.value)})
+  const titleInput = document.querySelector('input[placeholder="Title"]');
+  const authorInput = document.querySelector('input[placeholder="Author"]');
   if (!(titleInput.value.length < 3 || authorInput.value.length < 3)) {
     addBook(titleInput.value, authorInput.value, listOfBooks);
     location.reload();
   } else {
-    let form = document.querySelector("form");
-    let errorDiv = document.createElement("div");
+    const form = document.querySelector('form');
+    const errorDiv = document.createElement('div');
     form.prepend(errorDiv);
     errorDiv.innerHTML = `
        <p>Check your input *min length 3 chars* </p>
@@ -49,7 +49,7 @@ function handleAdd(event) {
   }
 }
 
-let form = document.querySelector("form");
-form.addEventListener("submit", handleAdd);
+const form = document.querySelector('form');
+form.addEventListener('submit', handleAdd);
 
 display();
