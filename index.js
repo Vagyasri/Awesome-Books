@@ -9,9 +9,6 @@ class Book {
     this.serialNumber = Book.listOfBooks.length + 1;
     Book.listOfBooks.push(this);
   }
-}
-class Methods {
-  // constructor() {}
 
   static add({ title, author }) {
     // eslint-disable-next-line no-new
@@ -26,40 +23,40 @@ class Methods {
 
     localStorage.setItem('books', JSON.stringify(Book.listOfBooks)); location.reload();
   }
+}
 
-  static display() {
-    const booksContainer = document.getElementById('display-books');
-    // eslint-disable-next-line no-restricted-syntax
-    for (const book of Book.listOfBooks) {
-      booksContainer.innerHTML += `
-          <div id='${book.serialNumber}'>
-              <p>${book.title}</p>
-              <p>${book.author}</p>
-              <button type="button" class="removebtn" onclick='Methods.remove(event)'> Remove </button>
-              <hr>
-          </div> 
-          `;
-    }
-  }
-
-  static handleAddtion(event) {
-    event.preventDefault();
-    const titleInput = document.querySelector('input[placeholder="Title"]');
-    const authorInput = document.querySelector('input[placeholder="Author"]');
-    if (!(titleInput.value.length < 3 || authorInput.value.length < 3)) {
-      Methods.add({ title: titleInput.value, author: authorInput.value });
-      location.reload();
-    } else {
-      const form = document.querySelector('form');
-      const errorDiv = document.createElement('div');
-      form.prepend(errorDiv);
-      errorDiv.innerHTML = `
+function handleAddtion(event) {
+  event.preventDefault();
+  const titleInput = document.querySelector('input[placeholder="Title"]');
+  const authorInput = document.querySelector('input[placeholder="Author"]');
+  if (!(titleInput.value.length < 3 || authorInput.value.length < 3)) {
+    Book.add({ title: titleInput.value, author: authorInput.value });
+    location.reload();
+  } else {
+    const form = document.querySelector('form');
+    const errorDiv = document.createElement('div');
+    form.prepend(errorDiv);
+    errorDiv.innerHTML = `
        <p>Check your input *min length 3 chars* </p>
        `;
-    }
   }
 }
 
-Methods.display();
+function display() {
+  const booksContainer = document.getElementById('display-books');
+  // eslint-disable-next-line no-restricted-syntax
+  for (const book of Book.listOfBooks) {
+    booksContainer.innerHTML += `
+          <div id='${book.serialNumber}'>
+              <p>${book.title}</p>
+              <p>${book.author}</p>
+              <button type="button" class="removebtn" onclick='Book.remove(event)'> Remove </button>
+              <hr>
+          </div> 
+          `;
+  }
+}
+
+display();
 const form = document.querySelector('form');
-form.addEventListener('submit', Methods.handleAddtion);
+form.addEventListener('submit', handleAddtion);
