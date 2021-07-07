@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+// eslint-disable-next-line max-classes-per-file
 class Book {
   static listOfBooks = JSON.parse(localStorage.getItem('books')) || [];
 
@@ -21,12 +23,13 @@ class Methods {
     const remSerial = event.target.parentElement.id;
     // eslint-disable-next-line eqeqeq
     Book.listOfBooks = Book.listOfBooks.filter((book) => book.serialNumber != remSerial);
-  
+
     localStorage.setItem('books', JSON.stringify(Book.listOfBooks)); location.reload();
   }
 
   static display() {
     const booksContainer = document.getElementById('display-books');
+    // eslint-disable-next-line no-restricted-syntax
     for (const book of Book.listOfBooks) {
       booksContainer.innerHTML += `
           <div id='${book.serialNumber}'>
