@@ -14,7 +14,14 @@ class Book {
       Book.listOfBooks.push(this);
     }
 }
+class Methods {
+  constructor() {}
 
+  static add({ title, author }) {
+     new Book({ title, author });
+    globalThis.localStorage.setItem('books', JSON.stringify(Book.listOfBooks));
+  }
+}
 
 
 
