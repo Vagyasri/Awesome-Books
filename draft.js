@@ -35,10 +35,30 @@ class Methods {
       }
   }
 
+  static handleAddtion(event){
+
+    event.preventDefault();
+    const titleInput = document.querySelector('input[placeholder="Title"]');
+    const authorInput = document.querySelector('input[placeholder="Author"]');
+    if (!(titleInput.value.length < 3 || authorInput.value.length < 3)) {
+      Methods.add({title: titleInput.value, author: authorInput.value});
+      location.reload();
+    } else {
+      const form = document.querySelector('form');
+      const errorDiv = document.createElement('div');
+      form.prepend(errorDiv);
+      errorDiv.innerHTML = `
+         <p>Check your input *min length 3 chars* </p>
+         `;
+    }
+
+  }
+
 }
 
-
-
+Methods.display();
+const form = document.querySelector('form');
+form.addEventListener('submit', Methods.handleAddtion);
 
 
 // Methods.add({title: 'CLASSmy-book', author:'class'});
