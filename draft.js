@@ -21,7 +21,23 @@ class Methods {
      new Book({ title, author });
     globalThis.localStorage.setItem('books', JSON.stringify(Book.listOfBooks));
   }
+  static display(){
+    const booksContainer = document.getElementById('display-books');
+    for (const book of Book.listOfBooks) {
+        booksContainer.innerHTML += `
+            <div id='${book.serialNumber}'>
+                <p>${book.title}</p>
+                <p>${book.author}</p>
+                <button type="button" class="removebtn" onclick='Methods.removeBook(event)'> Remove </button>
+                <hr>
+            </div> 
+            `;
+      }
+  }
+
 }
+
+
 
 
 
