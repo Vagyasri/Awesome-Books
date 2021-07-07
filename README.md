@@ -1,7 +1,6 @@
 # Awesome-Books
 
-Manage books collection (plain JS with classes):
-  In this lesson, we will learn about JavaScript classes, how to use them, their syntax, relationship, and differences with objects and functions.
+Manage books collection (plain JS with classes): In this project, we will be refactoring the Awesome books application to use JavaScript classes.
 
 ## Built With
 
