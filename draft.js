@@ -18,7 +18,7 @@
 //   constructor() {}
 
 //   static add({ title, author }) {
-//     // 
+//     //
 //     new Book({ title, author });
 //     Book.listofBooks;
 //   }
@@ -28,8 +28,6 @@
 
 // // // let method1 = new Methods();
 // // // Methods.add();
-
-
 
 // let book1 = new Book({ author:'author', title:'first-book'});
 
