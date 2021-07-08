@@ -85,5 +85,34 @@ function display() {1
 // Start of the program
 const lib = new Library();
 const form = document.querySelector('form');
+const contact = document.querySelector('.contact');
+const booksList = document.querySelector('#display-books');
+
 form.addEventListener('submit', addBookHandler);
 display();
+
+
+//navigation handler 
+function navHandler(event){
+  //look for the class name
+  console.log(event.target.parentElement.id)
+  switch(event.target.parentElement.id) {
+    case 'item-one':
+      contact.classList.add('disapear');
+      form.classList.add('disapear');
+      booksList.classList.remove('disapear');
+      break;
+    case 'item-two':
+      contact.classList.add('disapear');
+      booksList.classList.add('disapear');
+      form.classList.remove('disapear');
+      break;
+      case 'item-three':
+        contact.classList.remove('disapear');
+        booksList.classList.add('disapear');
+        form.classList.add('disapear');
+      break;
+    default:
+      // code block
+  }
+}

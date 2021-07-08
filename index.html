@@ -19,23 +19,23 @@
         <nav class='navigation'>
             <div class='logo'> <p>Awesome Books</p> </div>
             <ul class='links'>
-                <li class="item"> <a href="#">List</a> </li>
-                <li class="item"> <a href="#">Add new</a> </li>
-                <li class="item"> <a href="#">Contact</a> </li>
+                <li class="item" id='item-one'> <a onclick="navHandler(event)" href="#">List</a> </li>
+                <li class="item" id='item-two'> <a onclick="navHandler(event)" href="#">Add new</a> </li>
+                <li class="item" id='item-three'> <a onclick="navHandler(event)" href="#">Contact</a> </li>
             </ul>
         </nav>
         <div class='content'>
-            <div class='dummy-div'>
-                
-            </div>
-            <header class='header text-center'>
-                <h1>Awesome books</h1>
-            </header>
+            <div class='dummy-div'> </div>
+
+            
     
             <div id='display-books'>
+                <header class='header text-center'>
+                    <h1>Awesome books</h1>
+                </header>
             </div>
     
-            <form class='text-center'>
+            <form class='text-center disapear'>
                 <div class=form-header>
                     <h1>add a new book</h1>
                 </div>
@@ -45,6 +45,9 @@
                 <button class='add-btn' type="submit"> Add </button>
                 </div>
             </form>
+            <div class="contact disapear">
+                <h1>contact information!!</h1>
+            </div>
         </div>
     </div>
     <script src='index.js'></script>

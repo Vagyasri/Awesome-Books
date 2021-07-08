@@ -7,6 +7,7 @@
 
 html {
   font-size: 0.625rem;
+  
 }
 
 body {
@@ -18,8 +19,11 @@ body {
 .container {
   max-width: 800px;
   margin: 0 auto;
+  _border: 1px solid green;
 }
-
+.disapear{
+  display: none;
+}
 .text-center {
   text-align: center;
 }
@@ -31,7 +35,8 @@ body {
   justify-content: space-between;
   font-size: 1.5rem;
   position: fixed;
-  width: 90%;
+  max-width: 100%;
+  width: 800px;
   _z-index: 1;
   background-color: sandybrown;
 }
@@ -41,6 +46,7 @@ body {
   _border: 1px solid black;
   width: 50%;
   text-align: right;
+  padding: 2rem 0;
 }
 .navigation .links .item {
 
@@ -64,7 +70,7 @@ body {
   _margin: 10rem 0;
 }
 .dummy-div{
-  height: 6rem;
+  height: 10rem;
 }
 .header h1 {
   _margin: 10rem 0;
