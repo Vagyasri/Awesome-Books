@@ -86,8 +86,26 @@ body {
   padding: 0.5em 1.5em;
 }
 
+.form-header{
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  font-family: "lato", sans-serif;
+  
+}
+.form-header::before{
+  content: '';
+  display: block;
+  border-top: 3px solid black;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -1rem);
+  
+}
+
 form {
   padding: 1em;
+  position: relative;
 }
 
 input[placeholder="Title"],
@@ -112,6 +130,7 @@ input[placeholder="Author"] {
   font-size: 1.2rem;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: 20%;
+  
 }
 
 .add-btn:hover {
@@ -119,4 +138,9 @@ input[placeholder="Author"] {
   border: 1px solid white;
   color: white;
   padding: 0.5em 1.5em;
+}
+.bttn-container{
+  text-align: right;
+  width: 38%;
+  margin: 0 auto;
 }
