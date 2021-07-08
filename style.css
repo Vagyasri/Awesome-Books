@@ -64,13 +64,13 @@ body {
   padding: 0.3em 1em;
 }
 
-.form-header{
+.form-header {
   margin-bottom: 1rem;
   text-transform: capitalize;
   font-family: "lato", sans-serif;
-  
 }
-.form-header::before{
+
+.form-header::before {
   content: '';
   display: block;
   border-top: 3px solid black;
@@ -78,7 +78,6 @@ body {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -1rem);
-  
 }
 
 form {
@@ -96,7 +95,8 @@ input[placeholder="Author"] {
   font-size: 1rem;
 }
 
-.removebtn, .add-btn {
+.removebtn,
+.add-btn {
   background: rgb(40, 4, 65);
   outline: none;
   border: 1px solid orangered;
@@ -109,17 +109,19 @@ input[placeholder="Author"] {
   font-weight: 200;
 }
 
-.add-btn{
+.add-btn {
   padding: 0.25em 0.5em;
 }
 
-.add-btn:hover, .removebtn:hover {
+.add-btn:hover,
+.removebtn:hover {
   background: red;
   border: 1px solid white;
   color: white;
   padding: 0.5em 1.5em;
 }
-.bttn-container{
+
+.bttn-container {
   text-align: right;
   width: 38%;
   margin: 0 auto;
