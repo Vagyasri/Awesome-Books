@@ -17,11 +17,11 @@
 <body>
     <div class='container'>
         <nav class='navigation'>
-            <div class='logo'> <p>Awesome Books</p> </div>
+            <div class='logo'> <a href="index.html"><p>Awesome Books</p></a> </div>
             <ul class='links'>
-                <li class="item" id='item-one'> <a onclick="navHandler(event)" href="#">List</a> </li>
-                <li class="item" id='item-two'> <a onclick="navHandler(event)" href="#">Add new</a> </li>
-                <li class="item" id='item-three'> <a onclick="navHandler(event)" href="#">Contact</a> </li>
+                <li class="item" id='item-one'> <a onclick="navHandler(event)" href="#"> <p> List </p> </a> </li>
+                <li class="item" id='item-two'> <a onclick="navHandler(event)" href="#"> <p> Add new </p> </a> </li>
+                <li class="item" id='item-three'> <a onclick="navHandler(event)" href="#"> <p> Contact </p> </a> </li>
             </ul>
         </nav>
         <div class='content'>
@@ -36,17 +36,26 @@
             </div>
     
             <form class='text-center disapear'>
-                <div class=form-header>
+                <div class="form-header header">
                     <h1>add a new book</h1>
                 </div>
                 <input type="text" placeholder="Title" ><br><br>
                 <input type="text" placeholder="Author"><br><br>
                 <div class="bttn-container">
-                <button class='add-btn' type="submit"> Add </button>
+                <button class='add-btn' type="submit"> ADD </button>
                 </div>
             </form>
             <div class="contact disapear">
-                <h1>contact information!!</h1>
+                <div class='contact-container'>
+                    <h1>contact information!!</h1>
+                <p>Do you have any questions or you just want to say "hello"?</p>
+                <p>you can reach out to us!</p>
+                <ul>
+                    <li class='contact-item'>our email: mail@mail.com </li>
+                    <li class='contact-item'>our phone number: +123456789</li>
+                    <li class='contact-item'>our address: Lorem ipsum dolor ste!</li>
+                </ul>
+                </div>
             </div>
         </div>
     </div>

@@ -60,7 +60,7 @@ function removeBookHandler(event) {
   lib.remove(event.target.parentElement.parentElement.id); location.reload();
 }
 
-function display() {1
+function display() {
   const booksContainer = document.getElementById('display-books');
   // eslint-disable-next-line no-restricted-syntax
   for (const book of lib.libBooks) {
@@ -95,8 +95,8 @@ display();
 //navigation handler 
 function navHandler(event){
   //look for the class name
-  console.log(event.target.parentElement.id)
-  switch(event.target.parentElement.id) {
+  console.log(event.target.parentElement.parentElement.id)
+  switch(event.target.parentElement.parentElement.id) {
     case 'item-one':
       contact.classList.add('disapear');
       form.classList.add('disapear');
