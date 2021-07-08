@@ -29,6 +29,11 @@ body {
   text-align: center;
 }
 
+.nav-width {
+  max-width: 900px;
+  min-width: 525px;
+}
+
 /* start navbar */
 .navigation {
   border: 3px double #ecf0f1;
@@ -36,15 +41,13 @@ body {
   justify-content: space-between;
   font-size: 2em;
   position: fixed;
-  max-width: 900px;
-  min-width: 525px;
   width: 90vw;
   background-color: #c0392b;
 }
 
 .logo {
   color: white;
-  border: 1px solid #ecf0f1;
+  _border: 1px solid #ecf0f1;
   font-size: 2rem;
   padding: 0 2rem;
   display: flex;
@@ -79,14 +82,24 @@ body {
 /* end navbar */
 
 .content {
-  background-color: #1abc9c;
   background-color: #ecf0f1;
   height: 100vh;
 }
 
 .dummy-div {
-  height: 10rem;
+  height: 15rem;
   margin-bottom: 1rem;
+}
+
+.timeNow {
+  width: 89.8vw;
+  padding: 0.5rem;
+  text-align: right;
+  color: #ecf0f1;
+  background-color: #e74c3c;
+  position: fixed;
+  top: 8rem;
+  font-size: 2em;
 }
 
 .header {
@@ -103,7 +116,8 @@ body {
   padding: 50px 0;
   font-size: 4em;
   border: 3px double black;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  _font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Yomogi', cursive;
   color: black;
 }
 
@@ -240,10 +254,11 @@ input[placeholder="Author"] {
 
 /* contact */
 
-footer{
+footer {
   bottom: 0;
   padding: 1rem;
 }
-footer p{
+
+footer p {
   font-size: 1rem;
 }

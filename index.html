@@ -10,13 +10,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 
     <title>Awesome Books</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
 </head>
 <body>
     <div class='container'>
-        <nav class='navigation'>
+        <nav class='navigation nav-width'>
             <div class='logo'> <a href="index.html"><p>Awesome Books</p></a> </div>
             <ul class='links'>
                 <li class="item" id='item-one'> <a onclick="navHandler(event)" href="#"> <p> List </p> </a> </li>
@@ -24,11 +29,10 @@
                 <li class="item" id='item-three'> <a onclick="navHandler(event)" href="#"> <p> Contact </p> </a> </li>
             </ul>
         </nav>
+        <p class='timeNow nav-width'></p>
         <div class='content'>
             <div class='dummy-div'> </div>
-
             
-    
             <div id='display-books'>
                 <header class='header text-center'>
                     <h1>Awesome books</h1>

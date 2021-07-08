@@ -84,10 +84,16 @@ function display() {
 
 // Start of the program
 const lib = new Library();
+
+// set and display time (luxom lib)
+const timeNow = window.luxon.DateTime.now().toLocaleString(window.luxon.DateTime.DATETIME_MED);
+const displayTime = document.querySelector('.timeNow');
+displayTime.innerText = `${timeNow}`;
+
+
 const form = document.querySelector('form');
 const contact = document.querySelector('.contact');
 const booksList = document.querySelector('#display-books');
-
 form.addEventListener('submit', addBookHandler);
 display();
 
@@ -113,6 +119,5 @@ function navHandler(event){
         form.classList.add('disapear');
       break;
     default:
-      // code block
   }
 }
