@@ -218,7 +218,6 @@ input[placeholder="Author"] {
   margin: 0 auto;
 }
 
-
 /* contact */
 .contact {
   font-size: 1.5rem;
@@ -254,11 +253,11 @@ input[placeholder="Author"] {
 
 /* contact */
 
-footer {
+.footer {
   bottom: 0;
   padding: 1rem;
 }
 
-footer p {
+.footer p {
   font-size: 1rem;
 }
