@@ -1,3 +1,6 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-restricted-globals */
+// eslint-disable-next-line max-classes-per-file
 class Book {
   constructor({ title, author, bookId }) {
     this.title = title;
@@ -45,13 +48,14 @@ function addBookHandler(event) {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 function removeBookHandler(event) {
   lib.remove(event.target.parentElement.id); location.reload();
 }
 
 function display() {
   const booksContainer = document.getElementById('display-books');
-  // eslint-disable-next-line no-restricted-syntax.
+  // eslint-disable-next-line no-restricted-syntax
   for (const book of lib.libBooks) {
     booksContainer.innerHTML += `
             <div id='${book.bookId}'>
@@ -63,3 +67,9 @@ function display() {
             `;
   }
 }
+
+// Start of the program
+const lib = new Library();
+const form = document.querySelector('form');
+form.addEventListener('submit', addBookHandler);
+display();
