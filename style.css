@@ -2,9 +2,7 @@ body div:last-of-type {
   _border: 1px solid blue;
 }
 
-input[placeholder="Title"] {
-  border: 3px solid green;
-}
+
 
 * {
   padding: 0;
@@ -18,7 +16,7 @@ html{
 }
 
 body{
-  background-color: black;
+  background-color: rgba(5, 84, 202, 0.815);
   padding: 2rem;
 }
 .container {
@@ -29,23 +27,22 @@ body{
   text-align: center;
 }
 .header h1{
-  _font-family: 'Montserrat', sans-serif;
-  font-family: 'Lato', sans-serif;
-  font-weight: 200;
-  letter-spacing: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+  _font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.0rem;
   margin-bottom: 2.5rem;
-  border: 1px solid white;
-  color: white;
+  _border: 1px solid rgb(17, 1, 1);
+  color: rgb(88, 6, 6);
   padding: .7rem;
 }
 #display-books{
   _width: 500px;
-  border: 1px solid black;
+  _border: 1px solid black;
   padding: .7rem;
   margin-bottom: 3rem;
 }
-.single-book {
-  _background-color: white;
+.single-book{
   margin-bottom: 2rem;
   padding: 1rem 1.5em;
   display: flex;
@@ -53,6 +50,13 @@ body{
   justify-content: space-between;
   border: .5px solid white;
   color: white;
+}
+
+.single-book:nth-child(even) {
+  background-color: rgb(77, 5, 73);
+}
+.single-book:nth-child(odd) {
+  background-color: rgb(29, 4, 87);
 }
 .book-info{
   font-family: 'Montserrat', sans-serif;
@@ -67,7 +71,7 @@ body{
   _border: .5px solid black;
 }
 .removebtn{
-  background: black;
+  background: rgb(40, 4, 65);
   outline: none;
   border: 1px solid orangered;
   padding: .5em 1.5em;
@@ -77,6 +81,7 @@ body{
   font-weight: 200;
   font-size: 1.2rem;
   transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 20%;
 }
 .removebtn:hover{
   background: red;
@@ -84,3 +89,39 @@ body{
   color: white;
   padding: .5em 1.5em;
 }
+form{
+  _border: 1px solid rgb(19, 1, 1);
+  padding: 1em;
+}
+
+input[placeholder="Title"],
+input[placeholder="Author"]{
+  border: none;
+  width: 40%;
+  padding: .5em;
+  border-radius: 1000px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.add-btn{
+  background: rgb(40, 4, 65);
+  outline: none;
+  border: 1px solid orangered;
+  padding: .25em .5em;
+  color: red;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1.6px;
+  font-weight: 200;
+  font-size: 1.2rem;
+  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 20%;
+}
+.add-btn:hover{
+  background: red;
+  border: 1px solid white;
+  color: white;
+  padding: .5em 1.5em;
+}
+
+
