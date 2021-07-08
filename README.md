@@ -1,6 +1,6 @@
 # Awesome-Books
 
-Manage books collection (plain JS with classes): In this project, we will be refactoring the Awesome books application to use JavaScript classes.
+Style core elements of the page: In this project, we added CSS styles to the Awesome books application.
 
 ## Built With
 
