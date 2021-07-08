@@ -1,6 +1,6 @@
 # Awesome-Books
 
-Manage books collection (plain JS with classes): In this project, we will be refactoring the Awesome books application to use JavaScript classes.
+Style core elements of the page: In this project, we added CSS styles to the Awesome books application.
 
 ## Built With
 
@@ -69,3 +69,7 @@ Feel free to check the [issues page](https://github.com/Vagyasri/Awesome-Books/i
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

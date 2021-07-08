@@ -1,7 +1,128 @@
-body div:last-of-type {
-  border: 1px solid blue;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-input[placeholder="Title"] {
-  border: 3px solid green;
+html {
+  font-size: 0.625rem;
+}
+
+body {
+  background-color: rgba(5, 84, 202, 0.815);
+  padding: 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.header h1 {
+  font-weight: 700;
+  letter-spacing: 1rem;
+  margin-bottom: 2.5rem;
+  color: rgb(88, 6, 6);
+  padding: 0.7rem;
+}
+
+#display-books {
+  padding: 0.7rem;
+  margin-bottom: 3rem;
+}
+
+.single-book {
+  margin-bottom: 2rem;
+  padding: 1rem 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 0.5px solid white;
+  color: white;
+}
+
+.single-book:nth-child(even) {
+  background-color: rgb(77, 5, 73);
+}
+
+.single-book:nth-child(odd) {
+  background-color: rgb(29, 4, 87);
+}
+
+.book-info {
+  font-size: 1.2em;
+}
+
+.book-title,
+.book-author {
+  padding: 0.3em 1em;
+}
+
+.form-header {
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  font-family: "lato", sans-serif;
+}
+
+.form-header::before {
+  content: '';
+  display: block;
+  border-top: 3px solid black;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -1rem);
+}
+
+form {
+  padding: 1em;
+  position: relative;
+}
+
+input[placeholder="Title"],
+input[placeholder="Author"] {
+  border: none;
+  width: 40%;
+  padding: 0.5em;
+  border-radius: 1000px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.removebtn,
+.add-btn {
+  background: rgb(40, 4, 65);
+  outline: none;
+  border: 1px solid orangered;
+  padding: 0.5em 1.5em;
+  color: red;
+  letter-spacing: 1.6px;
+  font-size: 1.2rem;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 20%;
+  font-weight: 200;
+}
+
+.add-btn {
+  padding: 0.25em 0.5em;
+}
+
+.add-btn:hover,
+.removebtn:hover {
+  background: red;
+  border: 1px solid white;
+  color: white;
+  padding: 0.5em 1.5em;
+}
+
+.bttn-container {
+  text-align: right;
+  width: 38%;
+  margin: 0 auto;
 }
