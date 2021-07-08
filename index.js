@@ -65,11 +65,18 @@ function display() {
   // eslint-disable-next-line no-restricted-syntax
   for (const book of lib.libBooks) {
     booksContainer.innerHTML += `
-            <div id='${book.bookId}'>
-                <p>${book.title}</p>
-                <p>${book.author}</p>
-                <button type="button" class="removebtn" onclick='removeBookHandler(event)'> Remove </button>
-                <hr>
+            <div id='${book.bookId}' class='single-book'>
+                <div class='book-info' >
+                  <p>
+                    <span class='book-title'>${book.title}</span>
+                    <spna class='span-by'> by </span>
+                    <span class='book-author'>${book.author}</span>
+                  </p>
+                </div>
+                <div class='btn-container'>
+                  <button type="button" class="removebtn" onclick='removeBookHandler(event)'> Remove </button>
+                </div>
+                
             </div> 
             `;
   }

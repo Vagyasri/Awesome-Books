@@ -1,7 +1,86 @@
 body div:last-of-type {
-  border: 1px solid blue;
+  _border: 1px solid blue;
 }
 
 input[placeholder="Title"] {
   border: 3px solid green;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  /* 1 rem === 10px    */
+  font-size: .625rem
+  _font-size: 2rem;
+}
+
+body{
+  background-color: black;
+  padding: 2rem;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.text-center {
+  text-align: center;
+}
+.header h1{
+  _font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  letter-spacing: 1.6rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid white;
+  color: white;
+  padding: .7rem;
+}
+#display-books{
+  _width: 500px;
+  border: 1px solid black;
+  padding: .7rem;
+  margin-bottom: 3rem;
+}
+.single-book {
+  _background-color: white;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: .5px solid white;
+  color: white;
+}
+.book-info{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+}
+.book-info p{
+  _padding: .3em 1em;
+  _border: .5px solid black;
+}
+.book-title, .book-author{
+  padding: .3em 1em;
+  _border: .5px solid black;
+}
+.removebtn{
+  background: black;
+  outline: none;
+  border: 1px solid orangered;
+  padding: .5em 1.5em;
+  color: red;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1.6px;
+  font-weight: 200;
+  font-size: 1.2rem;
+  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.removebtn:hover{
+  background: red;
+  border: 1px solid white;
+  color: white;
+  padding: .5em 1.5em;
 }
