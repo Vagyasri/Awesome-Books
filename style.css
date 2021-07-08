@@ -1,127 +1,122 @@
-body div:last-of-type {
-  _border: 1px solid blue;
-}
-
-
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-html{
-  /* 1 rem === 10px    */
-  font-size: .625rem
-  _font-size: 2rem;
+
+html {
+  font-size: 0.625rem;
 }
 
-body{
+body {
   background-color: rgba(5, 84, 202, 0.815);
   padding: 2rem;
 }
+
 .container {
   max-width: 800px;
   margin: 0 auto;
 }
+
 .text-center {
   text-align: center;
 }
-.header h1{
-  font-family: 'Montserrat', sans-serif;
-  _font-family: 'Lato', sans-serif;
+
+.header h1 {
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  letter-spacing: 1.0rem;
+  letter-spacing: 1rem;
   margin-bottom: 2.5rem;
-  _border: 1px solid rgb(17, 1, 1);
   color: rgb(88, 6, 6);
-  padding: .7rem;
+  padding: 0.7rem;
 }
-#display-books{
-  _width: 500px;
-  _border: 1px solid black;
-  padding: .7rem;
+
+#display-books {
+  padding: 0.7rem;
   margin-bottom: 3rem;
 }
-.single-book{
+
+.single-book {
   margin-bottom: 2rem;
   padding: 1rem 1.5em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: .5px solid white;
+  border: 0.5px solid white;
   color: white;
 }
 
 .single-book:nth-child(even) {
   background-color: rgb(77, 5, 73);
 }
+
 .single-book:nth-child(odd) {
   background-color: rgb(29, 4, 87);
 }
-.book-info{
-  font-family: 'Montserrat', sans-serif;
+
+.book-info {
+  font-family: "Montserrat", sans-serif;
   font-size: 1.2em;
 }
-.book-info p{
-  _padding: .3em 1em;
-  _border: .5px solid black;
+
+.book-title,
+.book-author {
+  padding: 0.3em 1em;
 }
-.book-title, .book-author{
-  padding: .3em 1em;
-  _border: .5px solid black;
-}
-.removebtn{
+
+.removebtn {
   background: rgb(40, 4, 65);
   outline: none;
   border: 1px solid orangered;
-  padding: .5em 1.5em;
+  padding: 0.5em 1.5em;
   color: red;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 1.6px;
   font-weight: 200;
   font-size: 1.2rem;
-  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: 20%;
 }
-.removebtn:hover{
+
+.removebtn:hover {
   background: red;
   border: 1px solid white;
   color: white;
-  padding: .5em 1.5em;
+  padding: 0.5em 1.5em;
 }
-form{
-  _border: 1px solid rgb(19, 1, 1);
+
+form {
   padding: 1em;
 }
 
 input[placeholder="Title"],
-input[placeholder="Author"]{
+input[placeholder="Author"] {
   border: none;
   width: 40%;
-  padding: .5em;
+  padding: 0.5em;
   border-radius: 1000px;
   outline: none;
   font-size: 1rem;
 }
 
-.add-btn{
+.add-btn {
   background: rgb(40, 4, 65);
   outline: none;
   border: 1px solid orangered;
-  padding: .25em .5em;
+  padding: 0.25em 0.5em;
   color: red;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 1.6px;
   font-weight: 200;
   font-size: 1.2rem;
-  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: 20%;
 }
-.add-btn:hover{
+
+.add-btn:hover {
   background: red;
   border: 1px solid white;
   color: white;
-  padding: .5em 1.5em;
+  padding: 0.5em 1.5em;
 }
-
-
