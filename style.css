@@ -11,7 +11,7 @@ html {
 
 body {
   background-color: rgba(5, 84, 202, 0.815);
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -23,8 +23,51 @@ body {
 .text-center {
   text-align: center;
 }
+/* start navbar */
+.navigation{
+  _margin-bottom: 200px;
+  border: 3px solid black;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  position: fixed;
+  width: 90%;
+  _z-index: 1;
+  background-color: sandybrown;
+}
+.logo{}
+.navigation .links {
+  list-style: none;
+  _border: 1px solid black;
+  width: 50%;
+  text-align: right;
+}
+.navigation .links .item {
 
+  display: inline-block;
+  padding: .5rem 1.5rem;
+}
+.navigation .links .item:nth-child(2){
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+.navigation .links a:link{
+  text-decoration: none;
+  color:white;
+
+}
+
+/* end navbar */
+
+.content{
+  background-color: yellow;
+  _margin: 10rem 0;
+}
+.dummy-div{
+  height: 6rem;
+}
 .header h1 {
+  _margin: 10rem 0;
   font-weight: 700;
   letter-spacing: 1rem;
   margin-bottom: 2.5rem;

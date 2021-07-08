@@ -57,10 +57,10 @@ function addBookHandler(event) {
 
 // eslint-disable-next-line no-unused-vars
 function removeBookHandler(event) {
-  lib.remove(event.target.parentElement.id); location.reload();
+  lib.remove(event.target.parentElement.parentElement.id); location.reload();
 }
 
-function display() {
+function display() {1
   const booksContainer = document.getElementById('display-books');
   // eslint-disable-next-line no-restricted-syntax
   for (const book of lib.libBooks) {
