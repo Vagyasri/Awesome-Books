@@ -14,7 +14,8 @@ class Library {
   }
 
   add({ title, author }) {
-    const bookId = this.libBooks.length + 1;
+    // const bookId = this.libBooks.length + 1;
+    const bookId = this.nextBookId();
     const book = new Book({ title, author, bookId });
     this.libBooks.push(book);
     this.updateLocalStorage();
@@ -28,6 +29,12 @@ class Library {
 
   updateLocalStorage() {
     localStorage.setItem('books', JSON.stringify(this.libBooks));
+  }
+
+  nextBookId() {
+    const lastBookObj = this.libBooks.length - 1;
+    const returnedID = (this.libBooks.length > 0) ? (this.libBooks[lastBookObj].bookId + 1) : 1;
+    return returnedID;
   }
 }
 
