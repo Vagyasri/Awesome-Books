@@ -12,6 +12,7 @@ html {
 body {
   background-color: rgba(5, 84, 202, 0.815);
   padding: 2rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -24,7 +25,6 @@ body {
 }
 
 .header h1 {
-  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 1rem;
   margin-bottom: 2.5rem;
@@ -56,34 +56,12 @@ body {
 }
 
 .book-info {
-  font-family: "Montserrat", sans-serif;
   font-size: 1.2em;
 }
 
 .book-title,
 .book-author {
   padding: 0.3em 1em;
-}
-
-.removebtn {
-  background: rgb(40, 4, 65);
-  outline: none;
-  border: 1px solid orangered;
-  padding: 0.5em 1.5em;
-  color: red;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 1.6px;
-  font-weight: 200;
-  font-size: 1.2rem;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border-radius: 20%;
-}
-
-.removebtn:hover {
-  background: red;
-  border: 1px solid white;
-  color: white;
-  padding: 0.5em 1.5em;
 }
 
 .form-header{
@@ -118,22 +96,24 @@ input[placeholder="Author"] {
   font-size: 1rem;
 }
 
-.add-btn {
+.removebtn, .add-btn {
   background: rgb(40, 4, 65);
   outline: none;
   border: 1px solid orangered;
-  padding: 0.25em 0.5em;
+  padding: 0.5em 1.5em;
   color: red;
-  font-family: "Montserrat", sans-serif;
   letter-spacing: 1.6px;
-  font-weight: 200;
   font-size: 1.2rem;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: 20%;
-  
+  font-weight: 200;
 }
 
-.add-btn:hover {
+.add-btn{
+  padding: 0.25em 0.5em;
+}
+
+.add-btn:hover, .removebtn:hover {
   background: red;
   border: 1px solid white;
   color: white;
