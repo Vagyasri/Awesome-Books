@@ -1,6 +1,6 @@
 # Awesome-Books
 
-In this project, We built a basic website that allows users to add/remove books from a list. We achieved that by using JavaScript objects and arrays. Also, we had dynamically modified the DOM and added basic events.
+Manage books collection (plain JS with classes): In this project, we will be refactoring the Awesome books application to use JavaScript classes.
 
 ## Built With
 
@@ -10,7 +10,7 @@ In this project, We built a basic website that allows users to add/remove books 
 
 ## Live Demo
 
-[Live View!!](https://vagyasri.github.io/Awesome-Books/)
+[Preview!!](https://vagyasri.github.io/Awesome-Books/)
 
 ## Author 1
 
@@ -47,6 +47,7 @@ In this project, We built a basic website that allows users to add/remove books 
 - Install npm
 - For HTML: Run npx hint .
 - For CSS: Run npx stylelint "**/*.{css,scss}"
+- For JavaScript: Run npx eslint .
 
 ## 🤝 Contributing
 
