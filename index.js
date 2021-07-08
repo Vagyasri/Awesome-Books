@@ -1,62 +1,29 @@
-/* eslint-disable no-restricted-globals */
-// eslint-disable-next-line max-classes-per-file
 class Book {
-  static listOfBooks = JSON.parse(localStorage.getItem('books')) || [];
-
-  constructor({ title, author }) {
+  constructor({ title, author, bookId }) {
     this.title = title;
     this.author = author;
-    this.serialNumber = Book.listOfBooks.length + 1;
-    Book.listOfBooks.push(this);
+    this.bookId = bookId;
+  }
+}
+class Library {
+  constructor() {
+    this.libBooks = JSON.parse(localStorage.getItem('books')) || [];
   }
 
-  static add({ title, author }) {
-    // eslint-disable-next-line no-new
-    new Book({ title, author });
-    localStorage.setItem('books', JSON.stringify(Book.listOfBooks));
+  add({ title, author }) {
+    const bookId = this.libBooks.length + 1;
+    const book = new Book({ title, author, bookId });
+    this.libBooks.push(book);
+    this.updateLocalStorage();
   }
 
-  static remove(event) {
-    const remSerial = event.target.parentElement.id;
+  remove(removedBookId) { /// hta5od ID bs
     // eslint-disable-next-line eqeqeq
-    Book.listOfBooks = Book.listOfBooks.filter((book) => book.serialNumber != remSerial);
+    this.libBooks = this.libBooks.filter((book) => book.bookId != removedBookId);
+    this.updateLocalStorage();
+  }
 
-    localStorage.setItem('books', JSON.stringify(Book.listOfBooks)); location.reload();
+  updateLocalStorage() {
+    localStorage.setItem('books', JSON.stringify(this.libBooks));
   }
 }
-
-function handleAddtion(event) {
-  event.preventDefault();
-  const titleInput = document.querySelector('input[placeholder="Title"]');
-  const authorInput = document.querySelector('input[placeholder="Author"]');
-  if (!(titleInput.value.length < 3 || authorInput.value.length < 3)) {
-    Book.add({ title: titleInput.value, author: authorInput.value });
-    location.reload();
-  } else {
-    const form = document.querySelector('form');
-    const errorDiv = document.createElement('div');
-    form.prepend(errorDiv);
-    errorDiv.innerHTML = `
-       <p>Check your input *min length 3 chars* </p>
-       `;
-  }
-}
-
-function display() {
-  const booksContainer = document.getElementById('display-books');
-  // eslint-disable-next-line no-restricted-syntax
-  for (const book of Book.listOfBooks) {
-    booksContainer.innerHTML += `
-          <div id='${book.serialNumber}'>
-              <p>${book.title}</p>
-              <p>${book.author}</p>
-              <button type="button" class="removebtn" onclick='Book.remove(event)'> Remove </button>
-              <hr>
-          </div> 
-          `;
-  }
-}
-
-display();
-const form = document.querySelector('form');
-form.addEventListener('submit', handleAddtion);
