@@ -37,7 +37,7 @@ body {
   font-size: 2em;
   position: fixed;
   max-width: 900px;
-  min-width: 490px;
+  min-width: 525px;
   width: 90vw;
   background-color: #c0392b;
 }
@@ -239,3 +239,11 @@ input[placeholder="Author"] {
 }
 
 /* contact */
+
+footer{
+  bottom: 0;
+  padding: 1rem;
+}
+footer p{
+  font-size: 1rem;
+}
