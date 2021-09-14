@@ -57,7 +57,7 @@ function addBookHandler(event) {
 
 // eslint-disable-next-line no-unused-vars
 function removeBookHandler(event) {
-  lib.remove(event.target.parentElement.id); location.reload();
+  lib.remove(event.target.parentElement.parentElement.id); location.reload();
 }
 
 function display() {
@@ -84,6 +84,38 @@ function display() {
 
 // Start of the program
 const lib = new Library();
+
+// set and display time (luxom lib)
+const timeNow = window.luxon.DateTime.now().toLocaleString(window.luxon.DateTime.DATETIME_MED);
+const displayTime = document.querySelector('.timeNow');
+displayTime.innerText = `${timeNow}`;
+
 const form = document.querySelector('form');
+const contact = document.querySelector('.contact');
+const booksList = document.querySelector('#display-books');
 form.addEventListener('submit', addBookHandler);
 display();
+
+// navigation handler
+// eslint-disable-next-line no-unused-vars
+function navHandler(event) {
+  // look for the class name
+  switch (event.target.parentElement.parentElement.id) {
+    case 'item-one':
+      contact.classList.add('disapear');
+      form.classList.add('disapear');
+      booksList.classList.remove('disapear');
+      break;
+    case 'item-two':
+      contact.classList.add('disapear');
+      booksList.classList.add('disapear');
+      form.classList.remove('disapear');
+      break;
+    case 'item-three':
+      contact.classList.remove('disapear');
+      booksList.classList.add('disapear');
+      form.classList.add('disapear');
+      break;
+    default:
+  }
+}

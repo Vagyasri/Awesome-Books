@@ -10,28 +10,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 
     <title>Awesome Books</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
 </head>
 <body>
     <div class='container'>
-        <header class='header text-center'>
-            <h1>Awesome books</h1>
-        </header>
-        <div id='display-books'>
+        <nav class='navigation nav-width'>
+            <div class='logo'> <a href="index.html"><p>Awesome Books</p></a> </div>
+            <ul class='links'>
+                <li class="item" id='item-one'> <a onclick="navHandler(event)" href="#"> <p> List </p> </a> </li>
+                <li class="item" id='item-two'> <a onclick="navHandler(event)" href="#"> <p> Add new </p> </a> </li>
+                <li class="item" id='item-three'> <a onclick="navHandler(event)" href="#"> <p> Contact </p> </a> </li>
+            </ul>
+        </nav>
+        <p class='timeNow nav-width'></p>
+        <div class='content'>
+            <div class='dummy-div'> </div>
+            
+            <div id='display-books'>
+                <header class='header text-center'>
+                    <h1>Awesome books</h1>
+                </header>
+            </div>
+    
+            <form class='text-center disapear'>
+                <div class="form-header header">
+                    <h1>add a new book</h1>
+                </div>
+                <input type="text" placeholder="Title" ><br><br>
+                <input type="text" placeholder="Author"><br><br>
+                <div class="bttn-container">
+                <button class='add-btn' type="submit"> ADD </button>
+                </div>
+            </form>
+            <div class="contact disapear">
+                <div class='contact-container'>
+                    <h1>contact information!!</h1>
+                <p>Do you have any questions or you just want to say "hello"?</p>
+                <p>you can reach out to us!</p>
+                <ul>
+                    <li class='contact-item'>our email: mail@mail.com </li>
+                    <li class='contact-item'>our phone number: +123456789</li>
+                    <li class='contact-item'>our address: Lorem ipsum dolor ste!</li>
+                </ul>
+                </div>
+            </div>
         </div>
-
-        <form class='text-center'>
-            <div class=form-header>
-                <h1>add a new book</h1>
-            </div>
-            <input type="text" placeholder="Title" ><br><br>
-            <input type="text" placeholder="Author"><br><br>
-            <div class="bttn-container">
-            <button class='add-btn' type="submit"> Add </button>
-            </div>
-        </form>
+        <footer class='footer navigation'>
+            <p>copyright 2021</p>
+        </footer>
     </div>
     <script src='index.js'></script>
 </body>
